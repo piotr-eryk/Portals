@@ -1,36 +1,76 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Mirror : TriggableObject
+public class Mirror : ReflectingObject
 {
-
+ 
     public float speed = 3f;
-    public bool rotateLeft = true;
-    public float rotateAngle = 45f;
-    // Start is called before the first frame update
+
+    public Vector3 targetRotate;
+
+    private Vector3 targetAngle;
+    private Vector3 currentAngle;
+    private LineRenderer laser;
+
+    public Laser laserScript;
+    public GunButton gunButtonScript;
     void Start()
     {
-        
+        currentAngle = transform.eulerAngles;
+        laser = GetComponent<LineRenderer>();
     }
 
-    // Update is called once per frame
+    // Update is called once per framez
     void Update()
     {
-        transform.localRotation = Vector3.Lerp(transform.localRotation, rotateAngle, Time.deltaTime * speed);
+        currentAngle = new Vector3(
+        Mathf.LerpAngle(currentAngle.x, targetAngle.x, Time.deltaTime * speed),
+        Mathf.LerpAngle(currentAngle.y, targetAngle.y, Time.deltaTime * speed),
+        Mathf.LerpAngle(currentAngle.z, targetAngle.z, Time.deltaTime * speed));
+
+        transform.eulerAngles = currentAngle;
     }
 
     public override void OnTrigger()
     {
         base.OnTrigger();
 
-        targetPosition = new Vector3(0, openedHeight, 0);
+        targetAngle = targetRotate;
     }
 
-    //public override void OnUnTrigger()
-    //{
-    //    base.OnUnTrigger();
+    public override void OnUnTrigger()
+    {
+        base.OnUnTrigger();
 
-    //    targetPosition = Vector3.zero;
-    //}
+        targetAngle = Vector3.zero;
+    }
+    public override void OnReflect()
+    {
+        base.OnReflect();
+
+        laser.SetPosition(0, transform.position);
+        laser.transform.Rotate(0.0f, -90.0f, 0.0f);
+
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))
+        {
+            laser.SetPosition(1, hit.point);
+           
+            if (hit.collider.CompareTag("Player"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            else if (hit.collider.CompareTag("BreakableObject"))
+            {
+                laserScript.OnTouch();
+            }
+            else if (hit.collider.CompareTag("GunButton"))
+            {
+                gunButtonScript.pressed = true;
+            }
+        }
+        else laser.SetPosition(1, transform.position + (transform.forward * 5000));
+
+    }
 }

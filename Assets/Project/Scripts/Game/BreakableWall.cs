@@ -11,13 +11,6 @@ public class BreakableWall : BreakableObject
     private Color lerpingColor;
     private Color originalColor = Color.white;
     private float t = 0f;
-
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (model) // if object exist

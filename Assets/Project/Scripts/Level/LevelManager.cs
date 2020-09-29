@@ -22,7 +22,7 @@ public class LevelManager
 
     private int level;
 
-    private const int MAXIMUM_LEVEL = 5;
+    private const int MAXIMUM_LEVEL = 7;
     public void LoadFirstLevel()
     {
         level = 1;

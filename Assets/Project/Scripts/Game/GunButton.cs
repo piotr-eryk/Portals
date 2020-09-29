@@ -9,7 +9,7 @@ public class GunButton : MonoBehaviour
     public GameObject model;
     public float pressureHeight = -1.6f;
     public float pressedSpeed = 3f;
-    private bool pressed;
+    public bool pressed;
 
     private Vector3 targetPosition;
     // Start is called before the first frame update
