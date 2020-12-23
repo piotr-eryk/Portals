@@ -33,11 +33,8 @@ public class PlatformGun : MonoBehaviour
         platformObject.transform.Rotate(0.0f, 0.0f, 90.0f, Space.Self);
 
         platformObject.transform.localScale = new Vector3(xSize, ySize, zSize);
-        platformObject.transform.position = transform.localPosition + transform.forward * platformObject.GetComponent<Renderer>().bounds.size.z/2; // gdy objekt jest zwrócony w inną stronę to trochę buggy
+        platformObject.transform.position = transform.localPosition + transform.forward * platformObject.GetComponent<Renderer>().bounds.size.z/2;
 
         Destroy(platformObject.gameObject, lifetime);
-
-      //  Rigidbody rigidbody = platformObject.GetComponent<Rigidbody>();
-
     }
 }

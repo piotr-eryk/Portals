@@ -6,14 +6,14 @@ using UnityEngine.UIElements;
 public class BreakableWall : BreakableObject
 {
     public GameObject model;
-    public float durationDestroy = 3f; //w sekundach
+    public float durationDestroy = 3f; 
 
     private Color lerpingColor;
     private Color originalColor = Color.white;
     private float t = 0f;
     void Update()
     {
-        if (model) // if object exist
+        if (model)
         {
             model.GetComponent<Renderer>().material.color = Color.Lerp(originalColor, lerpingColor, t);
             if (model.GetComponent<Renderer>().material.color == Color.red)
@@ -32,14 +32,12 @@ public class BreakableWall : BreakableObject
 
     public override void OnUntouch()
     {
-
         base.OnUntouch();
-        if (model) // if object exist
+        if (model) 
         {
             t -= Time.deltaTime / durationDestroy;
             Color originalColor = model.GetComponent<Renderer>().material.color;
             lerpingColor = Color.white;
         }
-
     }
 }

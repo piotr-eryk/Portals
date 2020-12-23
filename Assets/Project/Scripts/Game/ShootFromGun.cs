@@ -19,7 +19,6 @@ public class ShootFromGun : MonoBehaviour
             SpawnBullet();
         }
     }
-
     private void SpawnBullet()
     {
         GameObject bulletObject = Instantiate(bulletPrefab);
@@ -31,6 +30,5 @@ public class ShootFromGun : MonoBehaviour
 
         Rigidbody rigidbody = bulletObject.GetComponent<Rigidbody>();
         rigidbody.velocity = transform.forward * bulletSpeed;
-
     }
 }

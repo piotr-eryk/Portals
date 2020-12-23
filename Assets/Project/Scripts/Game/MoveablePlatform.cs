@@ -9,18 +9,14 @@ public class MoveablePlatform : MonoBehaviour
     public float zTravelDistance = 0f;
     public float flightSpeed = 0.5f;
     public GameObject model;
-   // public GameObject player;
 
     private Vector3 targetPosition;
-    //  private Vector3 startPosition;
     private bool pressed = false;
     void Start()
     {
-        //     startPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         targetPosition = Vector3.zero;
     }
 
-    // Update is called once per frame
     private void Update()
     {
         

@@ -16,7 +16,7 @@ public class Cannon : MonoBehaviour
 
         while (true)
         {
-            yield return StartCoroutine(LightPanel());  //jest lekka desynchronizacja po paru strzałach
+            yield return StartCoroutine(LightPanel());  //color desynchronize after few shoots
             yield return StartCoroutine(PutPanel());
         }
     }
