@@ -24,22 +24,21 @@ public class Laser : MonoBehaviour
     {
         targetObject.OnTouch();
 
-        // tutaj będzie zmiana koloru czy czegoś lasera
+        // add something like "change laser color"
     }
     //private void OnUntouch()
     //{
     //    targetObject.OnUntouch();
 
-    //    // tutaj będzie zmiana koloru czy czegoś lasera
+    //  // add somethinkg like "change laser color"
     //}
 
     private void OnReflect()
     {
         targetReflectingObject.OnReflect();
 
-        // tutaj będzie zmiana koloru czy czegoś lasera
+        // add somethinkg like "change laser color after reflect"
     }
-
     public void ShootLaser()
     {
         laser.SetPosition(0, transform.position);
@@ -48,18 +47,19 @@ public class Laser : MonoBehaviour
         {
             laser.SetPosition(1, hit.point);
 
-            if (hit.collider.CompareTag("Player"))
+            switch (hit.collider.tag)
             {
+                case "Player":
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
-            else if (hit.collider.CompareTag("BreakableObject"))
-            {
-                OnTouch();
-            }
-            else if (hit.collider.CompareTag("Mirror"))
-            {
+                    break;
+                case "Mirror":
                 OnReflect();
+                    break;
+                case "BreakableObject":
+                OnTouch();
+                    break;
             }
+
         }
         else laser.SetPosition(1, transform.position + (transform.forward * 5000));
 

@@ -21,8 +21,6 @@ public class Mirror : ReflectingObject
         currentAngle = transform.eulerAngles;
         laser = GetComponent<LineRenderer>();
     }
-
-    // Update is called once per framez
     void Update()
     {
         currentAngle = new Vector3(
@@ -56,18 +54,18 @@ public class Mirror : ReflectingObject
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit))
         {
             laser.SetPosition(1, hit.point);
-           
-            if (hit.collider.CompareTag("Player"))
+
+            switch (hit.collider.tag)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
-            else if (hit.collider.CompareTag("BreakableObject"))
-            {
-                laserScript.OnTouch();
-            }
-            else if (hit.collider.CompareTag("GunButton"))
-            {
-                gunButtonScript.pressed = true;
+                case "Player":
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    break;
+                case "Mirror":
+                    OnReflect();
+                    break;
+                case "GunButton":
+                    gunButtonScript.pressed = true;
+                    break;
             }
         }
         else laser.SetPosition(1, transform.position + (transform.forward * 5000));
