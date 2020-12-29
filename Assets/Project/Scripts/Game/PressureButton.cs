@@ -5,7 +5,6 @@ using UnityEngine;
 public class PressureButton : MonoBehaviour
 {
     public TriggableObject targetObject;
-    //public TriggableObject[] targetObject;
 
     public GameObject model;
     public float pressureHeight = -1.6f;
