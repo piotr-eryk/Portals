@@ -322,7 +322,7 @@ MonoBehaviour:
   renderTextures:
   - {fileID: 8400000, guid: e5a0c7744892d0a478afdb7a7b077fe4, type: 2}
   - {fileID: 8400000, guid: e061a37afe4db224db7326f1edca8fea, type: 2}
-  grabbingDistance: 2
+  grabbingDistance: 3.5
   throwingForce: 200
 --- !u!1 &7408852825162930726
 GameObject:

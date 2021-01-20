@@ -16,8 +16,6 @@ public class Basebutton : MonoBehaviour
     {
         targetPosition = Vector3.zero;
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (pressed == true)

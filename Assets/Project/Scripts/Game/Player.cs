@@ -21,18 +21,16 @@ public class Player : MonoBehaviour
     public Action OnCollectOrb;
 
     private Camera playerCamera;
-    // Start is called before the first frame update
     void Start()
     {
         portals = new List<Portal>();
         playerCamera = transform.GetComponentInChildren<Camera>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         bool interactedWithObject = false;
-        //logika branie rzeczy i strzelania objektami
+
         if (Input.GetMouseButtonUp(0))
         {
             if (grabbableObject != null)
@@ -56,7 +54,7 @@ public class Player : MonoBehaviour
                 }
             }
         }
-        // logika szczelania portalami
+
         if (Input.GetMouseButtonUp(0) && interactedWithObject == false)
         {
             if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit))
@@ -71,7 +69,7 @@ public class Player : MonoBehaviour
             }
         }
         if (grabbableObject != null)
-        {// samo transform.position reperezntuje pozycje gracza (jesteśmy w skrypcie player), trasform dorward domyślnie wynosi 1
+        {
             grabbableObject.transform.position = playerCamera.transform.position + playerCamera.transform.forward * grabbingDistance;
         }
     }
