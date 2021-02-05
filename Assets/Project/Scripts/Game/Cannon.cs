@@ -16,7 +16,7 @@ public class Cannon : MonoBehaviour
 
         while (true)
         {
-            yield return StartCoroutine(LightPanel());  //color desynchronize after few shoots
+            yield return StartCoroutine(LightPanel()); 
             yield return StartCoroutine(PutPanel());
         }
     }
@@ -26,7 +26,7 @@ public class Cannon : MonoBehaviour
         if (target != null)
         {
             transform.LookAt(target);
-            transform.rotation = Quaternion.Euler(lockPos, transform.rotation.eulerAngles.y, lockPos);
+            transform.rotation = Quaternion.Euler(lockPos, transform.rotation.eulerAngles.y + 90f, lockPos);
         }
     }
     private IEnumerator LightPanel()

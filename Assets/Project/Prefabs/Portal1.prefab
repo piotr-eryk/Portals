@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 7898686548121727028}
   - component: {fileID: 7898686548121727024}
   m_Layer: 0
-  m_Name: Portal
+  m_Name: Portal1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ Transform:
   m_GameObject: {fileID: 7898686548121727029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.3, y: 2.73, z: 8.965}
-  m_LocalScale: {x: 2, y: 4, z: 0.1}
+  m_LocalScale: {x: 2, y: 4, z: 0.0001}
   m_Children:
   - {fileID: 1952082900422329114}
   m_Father: {fileID: 0}
@@ -167,8 +167,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 877.898}
+  m_Center: {x: 0, y: 0, z: 437.44907}
 --- !u!114 &7898686548121727024
 MonoBehaviour:
   m_ObjectHideFlags: 0

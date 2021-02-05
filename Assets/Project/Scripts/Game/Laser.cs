@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Laser : MonoBehaviour
 {
     public BreakableObject targetObject;
-
     public ReflectingObject targetReflectingObject;
 
     private LineRenderer laser;
@@ -23,21 +22,11 @@ public class Laser : MonoBehaviour
     public void OnTouch()
     {
         targetObject.OnTouch();
-
-        // add something like "change laser color"
     }
-    //private void OnUntouch()
-    //{
-    //    targetObject.OnUntouch();
-
-    //  // add somethinkg like "change laser color"
-    //}
 
     private void OnReflect()
     {
         targetReflectingObject.OnReflect();
-
-        // add somethinkg like "change laser color after reflect"
     }
     public void ShootLaser()
     {

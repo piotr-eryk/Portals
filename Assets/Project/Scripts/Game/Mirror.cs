@@ -5,16 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Mirror : ReflectingObject
 {
- 
-    public float speed = 3f;
-
-    public Vector3 targetRotate;
 
     private Vector3 targetAngle;
     private Vector3 currentAngle;
     private LineRenderer laser;
 
-    public Laser laserScript;
+    public BreakableObject targetObject;
+    public float speed = 3f;
+    public Vector3 targetRotate;
     public GunButton gunButtonScript;
     void Start()
     {
@@ -31,6 +29,10 @@ public class Mirror : ReflectingObject
         transform.eulerAngles = currentAngle;
     }
 
+    public void OnTouch()
+    {
+        targetObject.OnTouch();
+    }
     public override void OnTrigger()
     {
         base.OnTrigger();
@@ -60,11 +62,11 @@ public class Mirror : ReflectingObject
                 case "Player":
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                     break;
-                case "Mirror":
-                    OnReflect();
-                    break;
                 case "GunButton":
                     gunButtonScript.pressed = true;
+                    break;
+                case "BreakableObject":
+                    OnTouch();
                     break;
             }
         }

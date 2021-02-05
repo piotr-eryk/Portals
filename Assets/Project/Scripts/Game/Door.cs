@@ -5,34 +5,39 @@ using UnityEngine;
 public class Door : TriggableObject
 {
 
-    public GameObject model;
+    public GameObject doorTop;
+    public GameObject doorBot;
     public float speed = 3f;
-    public float openedHeight;
+    public float openedHeightTop;
+    public float openedHeightBot;
 
-    private Vector3 targetPosition;
-    // Start is called before the first frame update
+    private Vector3 targetPositionTop;
+    private Vector3 targetPositionBot;
     void Start()
     {
-        targetPosition = Vector3.zero;
+        targetPositionTop = Vector3.zero;
+        targetPositionBot = Vector3.zero;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        model.transform.localPosition = Vector3.Lerp(model.transform.localPosition, targetPosition, Time.deltaTime * speed);
+        doorTop.transform.localPosition = Vector3.Lerp(doorTop.transform.localPosition, targetPositionTop, Time.deltaTime * speed);
+        doorBot.transform.localPosition = Vector3.Lerp(doorBot.transform.localPosition, targetPositionBot, Time.deltaTime * speed);
     }
 
     public override void OnTrigger()
     {
         base.OnTrigger();
 
-        targetPosition = new Vector3(0, openedHeight, 0);
+        targetPositionTop = new Vector3(0, openedHeightTop, 0);
+        targetPositionBot = new Vector3(0, openedHeightBot, 0);
     }
 
     public override void OnUnTrigger()
     {
         base.OnUnTrigger();
 
-        targetPosition = Vector3.zero;
+        targetPositionTop = Vector3.zero;
+        targetPositionBot = Vector3.zero;
     }
 }

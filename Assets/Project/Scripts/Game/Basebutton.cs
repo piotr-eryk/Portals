@@ -9,7 +9,7 @@ public class Basebutton : MonoBehaviour
     public GameObject model;
     public float pressureHeight = -1.6f;
     public float pressedSpeed = 3f;
-    public bool pressed; //zmienić na protected po ogarnięciu skryptu lustra
+    public bool pressed; 
 
     protected Vector3 targetPosition;
     void Start()

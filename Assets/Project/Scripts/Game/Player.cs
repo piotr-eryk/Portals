@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     [Header("Grabbable Objects")]
     public float grabbingDistance = 2f;
     public float throwingForce = 4f;
+    public RawImage cubeIcon;
 
     private List<Portal> portals;
     private bool shouldUseFirstPortal = true;
@@ -25,6 +27,7 @@ public class Player : MonoBehaviour
     {
         portals = new List<Portal>();
         playerCamera = transform.GetComponentInChildren<Camera>();
+        cubeIcon.enabled = false;
     }
 
     void Update()
@@ -36,6 +39,7 @@ public class Player : MonoBehaviour
             if (grabbableObject != null)
             {
                 Release();
+                cubeIcon.enabled = false;
                 interactedWithObject = true;
             }
             else
@@ -48,6 +52,7 @@ public class Player : MonoBehaviour
                         if (grabbableObject == null)
                         {
                             Hold(targetObject);
+                            cubeIcon.enabled = true;
                             interactedWithObject = true;
                         }
                     }

@@ -940,7 +940,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Welcome to the Portals! Use the WASD keys to control the player and solve
-    the puzzle to collect purple cube!
+    the puzzle to collect purple cube! Use the ESC key to close the game.
 --- !u!222 &2120436788
 CanvasRenderer:
   m_ObjectHideFlags: 0

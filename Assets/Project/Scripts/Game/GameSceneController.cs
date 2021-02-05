@@ -22,9 +22,12 @@ public class GameSceneController : MonoBehaviour
         player.OnCollectOrb = OnCollectOrb;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+                Application.Quit();
+        }
         if (endedLevel == false)
         {
             gameTimer += Time.deltaTime;

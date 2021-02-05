@@ -15,7 +15,7 @@ public class LaserSphere : TriggableObject
     }
     void Update()
     {
-        model.transform.Rotate(0, actualRotateVelocity, 0, Space.Self);
+        model.transform.Rotate(0, 0, actualRotateVelocity, Space.Self);
     }
 
     public override void OnTrigger()

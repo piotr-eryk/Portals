@@ -6,11 +6,13 @@ using UnityEngine.UIElements;
 public class BreakableWall : BreakableObject
 {
     public GameObject model;
-    public float durationDestroy = 3f; 
+    public float durationDestroy = 3f;
+    public GameObject particle;
 
     private Color lerpingColor;
     private Color originalColor = Color.white;
     private float t = 0f;
+
     void Update()
     {
         if (model)
@@ -18,6 +20,7 @@ public class BreakableWall : BreakableObject
             model.GetComponent<Renderer>().material.color = Color.Lerp(originalColor, lerpingColor, t);
             if (model.GetComponent<Renderer>().material.color == Color.red)
             {
+                Explode();
                 Destroy(model);
             }
         }
@@ -40,4 +43,11 @@ public class BreakableWall : BreakableObject
             lerpingColor = Color.white;
         }
     }
+    private void Explode()
+    {
+        GameObject explosion = Instantiate(particle, model.transform.position, Quaternion.identity);
+        explosion.GetComponent<ParticleSystem>().Play();
+        Destroy(explosion, 2f);
+    }
+
 }
