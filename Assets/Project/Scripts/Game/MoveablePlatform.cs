@@ -16,11 +16,6 @@ public class MoveablePlatform : MonoBehaviour
     {
         targetPosition = Vector3.zero;
     }
-
-    private void Update()
-    {
-        
-    }
     private void FixedUpdate()
     {
         if (pressed == true)

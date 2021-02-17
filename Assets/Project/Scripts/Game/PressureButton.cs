@@ -10,17 +10,14 @@ public class PressureButton : MonoBehaviour
     public float pressureHeight = -1.6f;
     public float pressedDuration = 1f;
     public float pressedSpeed = 3f;
-    private bool pressed;
 
+    private bool pressed;
     private Vector3 targetPosition;
     private float pressedTimer;
-    // Start is called before the first frame update
     void Start()
     {
         targetPosition = Vector3.zero;
     }
-
-    // Update is called once per frame
     void Update()
     {
         pressedTimer -= Time.deltaTime;
@@ -45,7 +42,6 @@ public class PressureButton : MonoBehaviour
         }
         model.transform.localPosition = Vector3.Lerp (model.transform.localPosition, targetPosition, Time.deltaTime * pressedSpeed);
     }
-    //otherCollider to rzecz, która załączy OnTriggerStay (np Box)
     void OnTriggerStay(Collider otherCollider)
     {
         if (otherCollider.GetComponent<Player>() != null || otherCollider.GetComponent<GrabbableObject>() != null)

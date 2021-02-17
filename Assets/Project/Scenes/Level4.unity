@@ -420,7 +420,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 2.3138e-41, z: 0, w: NaN}
+  m_BoundingSphereOverride: {x: 1e-45, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1107,7 +1107,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -12.497055, z: 7.58e-43, w: -13.080521}
+  m_BoundingSphereOverride: {x: 0, y: 7e-45, z: 9.1835e-41, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1199,7 +1199,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.58e-43, y: 2.2667e-41, z: 0, w: -1}
+  m_BoundingSphereOverride: {x: 0, y: 8.345535, z: 7.13e-43, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1857,7 +1857,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -3.9073925, z: 7.58e-43, w: 8.3e-44}
+  m_BoundingSphereOverride: {x: Infinity, y: Infinity, z: -Infinity, w: -Infinity}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2075,7 +2075,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 7.58e-43, y: 2.265e-41, z: 0, w: -1}
+  m_BoundingSphereOverride: {x: Infinity, y: Infinity, z: -Infinity, w: -Infinity}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2635,7 +2635,7 @@ PrefabInstance:
     - target: {fileID: 1675704925870483488, guid: f578f07b5affae347b31b72082795316,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.668
+      value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 1675704925870483488, guid: f578f07b5affae347b31b72082795316,
         type: 3}
@@ -3590,7 +3590,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0.000010801294, y: -9.454163, z: 7.58e-43, w: 8.3e-44}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 7e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -6024,14 +6024,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707331233302133633}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.47, y: 1.78, z: 1.9}
+  m_LocalRotation: {x: -0, y: -0.0042392295, z: -0, w: -0.99999106}
+  m_LocalPosition: {x: 0.47, y: 2.31, z: 1.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 904650010}
   m_Father: {fileID: 2112496331}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 360.486, z: 0}
 --- !u!33 &1237913433598300258
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6169,16 +6169,51 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a4c280a31ae6db548a845e636630a847, type: 2}
+    - target: {fileID: 2185790608430544730, guid: beffa8058de141b4dab4c6777ae43547,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185790608430544730, guid: beffa8058de141b4dab4c6777ae43547,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185790608430544730, guid: beffa8058de141b4dab4c6777ae43547,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185790608430544730, guid: beffa8058de141b4dab4c6777ae43547,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185790608430544730, guid: beffa8058de141b4dab4c6777ae43547,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 2185790608944392594, guid: beffa8058de141b4dab4c6777ae43547,
         type: 3}
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 2129302314}
+    - target: {fileID: 2185790608944392594, guid: beffa8058de141b4dab4c6777ae43547,
+        type: 3}
+      propertyPath: pressureHeight
+      value: -0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 2185790608944392620, guid: beffa8058de141b4dab4c6777ae43547,
         type: 3}
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 6116598887128630020}
+    - target: {fileID: 2185790608944392620, guid: beffa8058de141b4dab4c6777ae43547,
+        type: 3}
+      propertyPath: pressureHeight
+      value: -0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 2185790608944392622, guid: beffa8058de141b4dab4c6777ae43547,
         type: 3}
       propertyPath: m_Name
@@ -6202,22 +6237,22 @@ PrefabInstance:
     - target: {fileID: 2185790608944392623, guid: beffa8058de141b4dab4c6777ae43547,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2185790608944392623, guid: beffa8058de141b4dab4c6777ae43547,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2185790608944392623, guid: beffa8058de141b4dab4c6777ae43547,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2185790608944392623, guid: beffa8058de141b4dab4c6777ae43547,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2185790608944392623, guid: beffa8058de141b4dab4c6777ae43547,
         type: 3}
@@ -6227,7 +6262,7 @@ PrefabInstance:
     - target: {fileID: 2185790608944392623, guid: beffa8058de141b4dab4c6777ae43547,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 2185790608944392623, guid: beffa8058de141b4dab4c6777ae43547,
         type: 3}
